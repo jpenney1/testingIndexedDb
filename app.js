@@ -9,13 +9,13 @@ dbRequest.onsuccess = e => {
 	const db = e.target.result
 
 	// open transactions interface with the indexed database
-	const transaction = db.transaction('elephants', 'readwrite')
+	const transaction = db.transaction('elephants', 'readwrite').objectStore('elephants')
 
 	// set the data in store to key
-	const put = transaction.objectStore('elephants').put('I like elephants', 'terrySays')
+	const put = transaction.put('I like elephants', 'terrySays')
 
 	// set the data associated with the given key in the given object store
-	transaction.objectStore('elephants').get('terrySays').onsuccess = e => console.log('Terry says: ', e.target.result)
+	transaction.get('terrySays').onsuccess = e => console.log('Terry says: ', e.target.result)
 }
 
 dbRequest.onupgradeneeded = e => {
