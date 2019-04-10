@@ -12,10 +12,10 @@ dbRequest.onsuccess = e => {
 	const transaction = db.transaction(['elephants'], 'readwrite')
 
 	// set the data in store to key
-	const put = transaction.objectStore('elephants').put('Terry Davis like elephants', 'elephantWisdom')
+	const put = transaction.objectStore('elephants').put('I like elephants', 'terrySays')
 
 	// set the data associated with the given key in the given object store
-	transaction.objectStore('elephants').get('elephantWisdom').onsuccess = e => console.log('elephantWisdom: ', e.target.result)
+	transaction.objectStore('elephants').get('terrySays').onsuccess = e => console.log('Terry says: ', e.target.result)
 }
 
 dbRequest.onupgradeneeded = e => {
