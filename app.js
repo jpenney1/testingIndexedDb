@@ -9,7 +9,7 @@ dbRequest.onsuccess = e => {
 	const db = e.target.result
 
 	// open transactions interface with the indexed database
-	const transaction = db.transaction(['elephants'], 'readwrite')
+	const transaction = db.transaction('elephants', 'readwrite')
 
 	// set the data in store to key
 	const put = transaction.objectStore('elephants').put('I like elephants', 'terrySays')
