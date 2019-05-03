@@ -7,8 +7,28 @@
 	body {
 		background-color: cyan;
 	}
+	#loginForm {
+		position: absolute;
+		padding: 12px;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: mintcream;
+		border: 2px solid lightgrey;
+	}
 </style>
+<script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 <body>
-	<script type="text/javascript" src="/app.js"></script>
+	<form id="loginForm">
+		<h2>Login!</h2>
+		<label><p>Username</p></label>
+		<input id="username" type="text"/>
+		<label><p>Password</p></label>
+		<input id="password" type="password"/>
+		<p>
+			<button type="submit">Submit!</button>
+		</p>
+	</form>
 </body>
+<script type="text/javascript" src="/app.js"></script>
 </html>
